@@ -1,2 +1,6 @@
 # SPDEsclm: Inference on spatial data with censored or missing responses using stochastic partial differential equations (SPDEs)
-SPDEsclm addresses censored and missing data in spatial statistics by approximating Gaussian Random Fields (GRF) with Gaussian Markov Random Fields (GMRF) via Stochastic Partial Differential Equations (SPDE). It uses the Stochastic Approximation Expectation-Maximization (SAEM) algorithm for efficient parameter estimation.
+SPDEsclm is a function designed to address the challenges of censored and missing data in spatial statistics. In real-world applications, incomplete datasets often arise due to measurement limitations or reporting gaps, potentially introducing biases and reducing estimation accuracy.
+
+To overcome these issues, SPDEsclm employs a likelihood-based approach that approximates Gaussian Random Fields (GRF) with Gaussian Markov Random Fields (GMRF). This approximation is achieved through Stochastic Partial Differential Equations (SPDE), which introduce sparsity into the covariance structure, significantly reducing computational costs.
+
+For parameter estimation, SPDEsclm implements the Stochastic Approximation Expectation-Maximization (SAEM) algorithm. This method efficiently handles censored and missing data by iteratively exploring the latent parameter space without requiring explicit computation of high-dimensional integrals. By combining SPDE-based modeling with SAEM, SPDEsclm improves both computational efficiency and accuracy, making it a practical tool for large-scale spatial datasets.
