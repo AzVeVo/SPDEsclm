@@ -1,0 +1,40 @@
+Package: SPDEcensSpatial
+Type: Package
+Title: Spatial Linear Regression Model with Censored or Missing Responses using SPDE
+Version: 0.1.0
+Authors@R: 
+  c(person(given = "Pablo",
+           family = "Zúñiga",
+           role = c("aut", "cre"),
+           email = "pabazuni@espol.edu.ec"),
+  person(given = "Katherine A.",
+           family = "L. Valeriano",
+           role = "ctb",
+           email = "kataloor@espol.edu.ec",
+           comment = c(ORCID = "0000-0001-6388-4753")),
+  person(given = "Lourival",
+           family = "Rodrigues",
+           role = "ctb",
+           email = "lourodri@espol.edu.ec"))
+Description: It provides a function to estimate parameters in linear spatial models with censored/missing responses via the Stochastic Approximation EM (SAEM) algorithm. To reduce the processing time, it is used an approximation of the Gaussian spatial process with matérn correlation by a Gaussian Markov Random Field (GMRF) obtained as a solution of a spatial partial differential equation (SPDE) as proposed by Sahoo et al. (2018)<https: //doi.org/10.48550/arXiv.2403.15670>.
+License: GPL (>= 2)
+Encoding: UTF-8
+RoxygenNote: 7.3.2
+Roxygen: list(old_usage = TRUE)
+LazyData: true
+Imports: 
+    fmesher,
+    ggplot2,
+    graphics,
+    gridExtra,
+    INLA,
+    mvtnorm,
+    Rcpp,
+    RcppCensSpatial,
+    Rdpack
+RdMacros: Rdpack
+LinkingTo: 
+    Rcpp,
+    RcppArmadillo,
+    RcppProgress,
+    roptim

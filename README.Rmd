@@ -1,0 +1,95 @@
+---
+output: github_document
+bibliography: inst/REFERENCES.bib
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+## The `SPDEcensSpatial` package
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The `SPDEcensSpatial` package fits a spatial censored linear regression model using the Stochastic Approximation Expectation-Maximization (SAEM) [@delyon1999convergence] algorithm. This algorithm is particularly effective in calculating maximum likelihood (ML) estimates for datasets with incomplete information. This model was formulated by @ordonez2018geostatistical, and enhanced within the Bayesian framework by @sahoo2024computationally. Sahoo proposed to approximate the Gaussian spatial process with Matérn correlation through a Gaussian Markov Random Field (GMRF) derived from a stochastic partial differential equation, introducing sparsity to the matrices and thereby significantly reducing the computational costs associated with large datasets.
+
+This package also approximates the standard error of the estimates using the method developed by @louis1982finding and supports missing values on the dependent variable. Moreover, it has a function that performs spatial prediction in new locations.
+
+The `SPDEcensSpatial` library provides the following functions:
+
+* `SPDEsclm`: fits a spatial censored linear regression model via the SAEM algorithm.
+* `predict.sclmSPDE`: performs spatial prediction in a set of new locations.
+
+`print`, `summary`, `predict`, and `plot` functions also work for the `sclmSPDE` class.
+
+Next, we will describe how to install the package and use all the previous methods in an artificial example.
+
+### Example
+In the following example, we simulate a dataset of length n = 220 from the spatial linear regression model considering three covariates and the Matérn correlation function with $\kappa=1$ to deal with the variation between spatial points. In order to evaluate the prediction accuracy, the dataset is train-test split. The training data consists of 200 observations, with 5% censored to the left, while the testing data contains 20 observations.
+
+```{r example1}
+library(RcppCensSpatial)
+library(SPDEcensSpatial)
+
+set.seed(12341)
+n = 220
+x = cbind(1, runif(n), rnorm(n))
+coords = round(matrix(runif(2*n, 0, 15), n, 2), 5)
+dat = rCensSp(beta=c(1,2,-1), sigma2=1, phi=4, nugget=0.50, x=x, coords=coords,
+              cens='left', pcens=.05, npred=20, cov.model="matern", kappa=1)
+# Proportion of censoring
+table(dat$Data$ci)
+```
+
+For comparison purposes, we fit the spatial censored linear model for the simulated data using our model (using SPDE) and the function `SAEM.sclm`, available in the library `RcppCensSpatial`.
+
+```{r example2}
+data1 = dat$Data
+
+# Our model
+fit1 = SPDEsclm(data1$y, data1$x, data1$ci, data1$lcl, data1$ucl, data1$coords,
+                phi0=3, gamma0=0.75, iedge=0.15, MaxIter=300, M=10)
+fit1$tab
+fit1$time
+
+# RcppCensSpatial
+fit2 = SAEM.sclm(data1$y, data1$x, data1$ci, data1$lcl, data1$ucl, data1$coords,
+                 phi0=3, nugget0=1, type="matern", kappa=1, M=10)
+fit2$tab
+fit2$time
+```
+
+Note that the estimates obtained for each method are similar and close to the true parameter value, except for the first regression coefficient, which was estimated close to 0.60, while the true value was equal to 1. Note also that the time needed for our proposal is lower that the time required by the `RcppCensSpatial` package.
+
+Moreover, generic functions `print` and `summary` return some results of the fit for the `sclm` class, such as the estimated parameters, standard errors, the effective range, the information criteria, and some convergence details.
+
+```{r example3}
+print(fit1)
+```
+On the other hand, the function `plot` provides convergence graphics for the parameters.
+
+```{r example4}
+plot(fit1)
+```
+
+Now, we compute the predicted values for each fitted model for the testing data and compare the mean squared prediction error (MSPE).
+
+```{r example5}
+data2 = dat$TestData
+pred1 = predict(fit1, data2$x, data2$coords)
+pred2 = predict(fit2, data2$coords, data2$x)
+
+# Cross-validation
+mean((data2$y - pred1$predValues)^2)
+mean((data2$y - pred2$predValues)^2)
+```
+
+### References
