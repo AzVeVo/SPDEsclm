@@ -1,0 +1,115 @@
+[
+    {
+        "file": "C:/Users/55199/OneDrive/Documents/4_Pacotes/SPDEcensSpatial/src/Funciones.cpp",
+        "file_last_write": 1738706644.0,
+        "definitions": [
+            {
+                "usr": "c:@S@optimQ",
+                "kind": 2,
+                "parent_name": "",
+                "name": "optimQ",
+                "file": "C:/Users/55199/OneDrive/Documents/4_Pacotes/SPDEcensSpatial/src/Funciones.cpp",
+                "line": 15,
+                "column": 7,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@optimQ@F@operator()#&1$@N@arma@S@Col>#d#",
+                "kind": 7,
+                "parent_name": "optimQ",
+                "name": "operator(const arma::vec &)",
+                "file": "C:/Users/55199/OneDrive/Documents/4_Pacotes/SPDEcensSpatial/src/Funciones.cpp",
+                "line": 26,
+                "column": 10,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@optimlL#$@N@arma@S@Col>#d#I#$@N@arma@S@Mat>#d#S0_#S0_#d#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "optimlL(arma::vec, Rcpp::List, arma::mat, arma::vec, arma::vec, double, arma::vec, arma::vec)",
+                "file": "C:/Users/55199/OneDrive/Documents/4_Pacotes/SPDEcensSpatial/src/Funciones.cpp",
+                "line": 48,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@crossdist#$@N@arma@S@Mat>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "crossdist(arma::mat)",
+                "file": "C:/Users/55199/OneDrive/Documents/4_Pacotes/SPDEcensSpatial/src/Funciones.cpp",
+                "line": 64,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@rtnormal#I#$@N@arma@S@Col>#d#S0_#$@N@arma@S@Mat>#d#S0_#S0_#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "rtnormal(int, arma::vec, arma::vec, arma::mat, arma::vec, arma::vec, int, int)",
+                "file": "C:/Users/55199/OneDrive/Documents/4_Pacotes/SPDEcensSpatial/src/Funciones.cpp",
+                "line": 79,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@corrSpatial#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "corrSpatial(double, Rcpp::List)",
+                "file": "C:/Users/55199/OneDrive/Documents/4_Pacotes/SPDEcensSpatial/src/Funciones.cpp",
+                "line": 142,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@PsiInverse#d#I#$@N@arma@S@SpMat>#d#$@N@arma@S@Col>#i#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "PsiInverse(double, Rcpp::List, arma::sp_mat, arma::uvec)",
+                "file": "C:/Users/55199/OneDrive/Documents/4_Pacotes/SPDEcensSpatial/src/Funciones.cpp",
+                "line": 168,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@saemEsp#$@N@arma@S@Col>#d#$@N@arma@S@Mat>#d#S0_#S1_#d#d#S0_#S0_#S0_#S0_#i#i#d#d#I#b#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "saemEsp(arma::vec, arma::mat, arma::vec, arma::mat, double, double, arma::vec, arma::vec, arma::vec, arma::vec, arma::uword, arma::uword, double, double, Rcpp::List, bool)",
+                "file": "C:/Users/55199/OneDrive/Documents/4_Pacotes/SPDEcensSpatial/src/Funciones.cpp",
+                "line": 199,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@corrSpatialPred#d#I#$@N@arma@S@SpMat>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "corrSpatialPred(double, Rcpp::List, arma::sp_mat)",
+                "file": "C:/Users/55199/OneDrive/Documents/4_Pacotes/SPDEcensSpatial/src/Funciones.cpp",
+                "line": 417,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@prediccion#I#I#$@N@arma@S@SpMat>#d#$@N@arma@S@Mat>#d#S1_#$@N@arma@S@Col>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "prediccion(Rcpp::List, Rcpp::List, arma::sp_mat, arma::mat, arma::mat, arma::vec)",
+                "file": "C:/Users/55199/OneDrive/Documents/4_Pacotes/SPDEcensSpatial/src/Funciones.cpp",
+                "line": 445,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "C:/Users/55199/OneDrive/Documents/4_Pacotes/SPDEcensSpatial/src/SPDEcensSpatial.cpp",
+        "file_last_write": 1738696289.0,
+        "definitions": [],
+        "hidden": false
+    }
+]

@@ -1,0 +1,28 @@
+{
+    "args": [
+        "-std=gnu++11",
+        "-IC:/PROGRA~1/R/R-44~1.2/include",
+        "-DNDEBUG",
+        "-fopenmp",
+        "-IC:/Users/55199/AppData/Local/R/win-library/4.4/Rcpp/include",
+        "-IC:/Users/55199/AppData/Local/R/win-library/4.4/RcppArmadillo/include",
+        "-IC:/Users/55199/AppData/Local/R/win-library/4.4/RcppProgress/include",
+        "-IC:/Users/55199/AppData/Local/R/win-library/4.4/roptim/include",
+        "-DEIGEN_DONT_VECTORIZE",
+        "-nostdinc",
+        "-Ic:/rtools44/x86_64~1.pos/bin/../lib/gcc/x86_64-w64-mingw32.static.posix/13.3.0/include/c++",
+        "-Ic:/rtools44/x86_64~1.pos/bin/../lib/gcc/x86_64-w64-mingw32.static.posix/13.3.0/include/c++/x86_64-w64-mingw32.static.posix",
+        "-Ic:/rtools44/x86_64~1.pos/bin/../lib/gcc/x86_64-w64-mingw32.static.posix/13.3.0/include/c++/backward",
+        "-Ic:/rtools44/x86_64~1.pos/bin/../lib/gcc/x86_64-w64-mingw32.static.posix/13.3.0/include",
+        "-Ic:/rtools44/x86_64~1.pos/bin/../lib/gcc/x86_64-w64-mingw32.static.posix/13.3.0/../../../../include",
+        "-Ic:/rtools44/x86_64~1.pos/bin/../lib/gcc/x86_64-w64-mingw32.static.posix/13.3.0/include-fixed",
+        "-include",
+        "C:/Users/55199/OneDrive/Documents/4_Pacotes/SPDEcensSpatial/.Rproj.user/8F47003A/compilation-database/mingw64/cpp-definitions.h"
+    ],
+    "pch": "RcppArmadillo",
+    "is_cpp": true,
+    "hash": "1692227570173870573217386963371738696337",
+    "compiler": "1391768606531529385",
+    "rversion": "4.4.2",
+    "dbversion": 4
+}
